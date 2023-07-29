@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+
+  accounts:
+    image: dks/account:latest
+    mem_limit: 700m
+    ports:
+      - "8000:8080"
+    networks:
+      - dks-network
+    
+  loans:
+    image: dks/loan:latest
+    mem_limit: 700m
+    ports:
+      - "9001:8090"
+    networks:
+      - dks-network
+    
+  cards:
+    image: dks/card:latest
+    mem_limit: 700m
+    ports:
+      - "9002:9005"
+    networks:
+      - dks-network
+    
+networks:
+  dks-network:
